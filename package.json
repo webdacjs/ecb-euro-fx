@@ -1,6 +1,6 @@
 {
   "name": "ecb-euro-fx",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Module to get eurofxref daily feeds from ECB and returns them in a nice object format.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "ecb",
     "fx",
     "money",
-    "euro"
+    "euro",
+    "exchange"
   ],
   "author": "Juan Convers",
   "license": "MIT",
@@ -23,8 +24,8 @@
   },
   "homepage": "https://github.com/webdacjs/ecb-euro-fx#readme",
   "dependencies": {
-    "console-hue": "^1.0.2",
-    "simple-fetch-cache": "^1.4.0",
-    "xml2js": "^0.4.19"
+    "console-hue": "1.0.2",
+    "simple-fetch-cache": "1.4.0",
+    "xml2js": "0.4.19"
   }
 }
