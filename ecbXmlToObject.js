@@ -16,15 +16,18 @@ function getRatesBySymbol (rateArray) {
   return ratesBySymbol
 }
 
-module.exports = function (parsedXMl) {
+module.exports = function (parsedXMl, cache) {
   const envelope = parsedXMl['gesmes:Envelope']
   const basecube = (envelope.Cube[0] || {Cube: []}).Cube[0]
   const rates = basecube.Cube.map(r => r['$'])
-  return {
+  const time = basecube['$']['time']
+  const fxObj = {
     subject: getSubject(envelope),
     sender: getSender(envelope),
-    time: basecube['$']['time'],
+    time,
     rates,
     ratesBySymbol: getRatesBySymbol(rates)
   }
+  cache.set(time, fxObj)
+  return fxObj
 }
